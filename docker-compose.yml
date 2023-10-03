@@ -1,0 +1,14 @@
+version: '3'
+services:
+  gc:
+    environment:
+      GOMEMLIMIT: "8MiB"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    deploy:
+      resources:
+        limits:
+          memory: 10M
